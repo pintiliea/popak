@@ -20,8 +20,8 @@ def indent(elem, level = 0):
     return elem
 
 
-DIR_RULES   = 'installed/usr/share/X11/xkb/rules/'
-DIR_SYMBOLS = 'installed/usr/share/X11/xkb/symbols/'
+DIR_RULES   = 'original/usr/share/X11/xkb/rules/'
+DIR_SYMBOLS = 'original/usr/share/X11/xkb/symbols/'
 
 BASE_XML = DIR_RULES + 'base.xml'
 BASE_LST = DIR_RULES + 'base.lst'
@@ -51,10 +51,24 @@ for element in root.findall("."):
 #    print('    ' + model.find("vendor").text)
 
 print('--- layouts -----------------------------------------------------------------------')
-for layout in root.findall("./layoutList/layout/configItem"):
-    print(layout.find("name").text)
-    print('    ' + layout.find("shortDescription").text)
-    print('    ' + layout.find("description").text)
+
+
+def print_layout(layout):
+
+    print(layout.find("configItem/name").text)
+    print('    ' + layout.find("configItem/shortDescription").text)
+    print('    ' + layout.find("configItem/description").text)
+    for variant in layout.findall("./variantList/variant/configItem"):
+        print('        ' + variant.find("name").text)
+        print('        ' + variant.find("description").text)
+
+layout_ro = root.find("./layoutList/layout/configItem/[name='ro']/..")
+print(ElementTree.tostring(layout_ro, 'unicode'))
+print_layout(layout_ro)
+
+#for layout in root.findall("./layoutList/layout"):
+#    print_layout(layout)
+
 
 #ElementTree.dump(rădăcină)
 
@@ -63,3 +77,4 @@ for layout in root.findall("./layoutList/layout/configItem"):
 # print(conținut_xml)
 # for element in rădăcină.iter():
 #     print(ET.tostring(element, 'unicode'))
+

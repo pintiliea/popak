@@ -1,0 +1,12 @@
+        <variant>
+          <configItem>
+            <name>popak_standard</name>
+            <description>Popak (Standard)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>popak_cedilla</name>
+            <description>Popak (Cedilla)</description>
+          </configItem>
+        </variant>

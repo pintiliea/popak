@@ -18,11 +18,11 @@ Open a terminal as root and
 Backup the following files:
 
 ```
-# cp evdev.xml evdev.xml.original
-# cp evdev.lst evdev.lst.original
+# cp evdev.xml evdev.xml.backup
+# cp evdev.lst evdev.lst.backup
 
-# cp base.xml  base.xml.original
-# cp base.xml  base.xml.original
+# cp base.xml  base.xml.backup
+# cp base.xml  base.xml.backup
 ```
 
 change directory to `symbols`:
@@ -34,7 +34,7 @@ change directory to `symbols`:
 and backup this file:
 
 ```
-# cp ro ro.original
+# cp ro ro.backup
 ```
 
 evdev.xml

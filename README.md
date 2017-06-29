@@ -221,5 +221,5 @@ xkb_symbols "popak_cedilla" {
 Save and exit.
 
 
-Done
+Reboot
 ----

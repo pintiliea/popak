@@ -1,7 +1,7 @@
 # popak-keyboard-layout-installer
 A scripted installer for the romanian Popak keyboard layout http://www.invatasingur.ro/popak/index.php
 
-![screenshot](popak-gnome.png)
+![screenshot](ro-layout-gnome.png)
 
 WORK IN PROGRESS! DON'T RUN THIS YET!
 -------------------------------------

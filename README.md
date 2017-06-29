@@ -6,8 +6,7 @@ WORK IN PROGRESS! DON'T RUN THIS YET!
 
 I tested these manual steps for Debian 8 Jessie. The installer will do the same, automatically.
 
-Backup before modifications
---------------------------
+## Backup before modifications
 
 Open a terminal as root and
 
@@ -37,12 +36,11 @@ and backup this file:
 # cp ro ro.backup
 ```
 
-evdev.xml
----------
+## evdev.xml
 
-Open the file `evdev.xml` for editing.
+Open the file `/usr/share/X11/xkb/rules/evdev.xml` for editing.
 
-Search for `Romanian (WinKeys)`.
+Search for `Romanian (WinKeys)`
 
 You should find something like this:
 
@@ -55,38 +53,47 @@ You should find something like this:
 </variant>
 ```
 
-Add these xml fragments right beneath the _Romanian (Winkeys)_ fragment:
+Add the two new variants _Popak (Standard)_ and _Popak (Cedilla)_ right beneath the _Romanian (Winkeys)_ fragment, between the closing tag `</variant>` and `</variantList>`. Make sure that `</variantList>` is under the new Popak variants. It should look like this:
 
 ```
-<variant>
-  <configItem>
-    <name>popak_standard</name>
-    <description>Popak (Standard)</description>
-  </configItem>
-</variant>
-<variant>
-  <configItem>
-    <name>popak_cedilla</name>
-    <description>Popak (Cedilla)</description>
-  </configItem>
-</variant>
+  <variant>
+    <configItem>
+      <name>winkeys</name>
+      <description>Romanian (WinKeys)</description>
+    </configItem>
+  </variant>
+
+  <!-- begin popak -->
+  <variant>
+    <configItem>
+      <name>popak_standard</name>
+      <description>Popak (Standard)</description>
+    </configItem>
+  </variant>
+  <variant>
+    <configItem>
+      <name>popak_cedilla</name>
+      <description>Popak (Cedilla)</description>
+    </configItem>
+  </variant>
+  <!-- end popak -->
+
+</variantList> 
 ```
+
+Save (and exit if you wish).
+
+
+## base.xml
+
+Open the file `/usr/share/X11/xkb/rules/base.xml` and repeat the modifications above.
 
 Save and exit.
 
 
-base.xml
---------
+## evdev.lst
 
-Open the file `base.xml` and repeat the modifications above.
-
-Save and exit.
-
-
-evdev.lst
----------
-
-Open the file `evdev.slt` for editing.
+Open the file `/usr/share/X11/xkb/rules/evdev.lst` for editing.
 
 Search for `Romanian (WinKeys)` again.
 
@@ -96,9 +103,10 @@ You should find something like this:
 winkeys         ro: Romanian (WinKeys)
 ```
 
-Add these lines right beneath the _Romanian (Winkeys)_ line:
+Add the two _Popak_ lines right beneath the _Romanian (Winkeys)_ line:
 
 ```
+winkeys         ro: Romanian (WinKeys)
 popak_standard  ro: Popak Standard
 popak_cedilla   ro: Popak Cedilla
 ```
@@ -106,18 +114,16 @@ popak_cedilla   ro: Popak Cedilla
 Save and exit.
 
 
-base.lst
---------
+## base.lst
 
-Open the file `base.lst` and repeat the modifications above.
+Open the file `/usr/share/X11/xkb/rules/base.lst` and repeat the modifications above.
 
 Save and exit.
 
 
-ro
---
+## ro
 
-Open the file `ro` in the `symbols` directory for editing.
+Open the file `/usr/share/X11/xkb/symbols/ro` for editing.
 
 Search for `xkb_symbols "cedilla"`
 

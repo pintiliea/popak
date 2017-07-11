@@ -39,6 +39,7 @@ LST_FRAGMENT = '''  popak_standard  ro: Popak Standard
 '''
 
 SYMBOLS_RO_FRAGMENT = '''
+
 partial default alphanumeric_keys
 xkb_symbols "popak_standard" {
 // Popak layout, developed by Nicolae Popa (nicolae.m.popa@gmail.com)
@@ -107,7 +108,6 @@ xkb_symbols "popak_cedilla" {
     key <AB02> { [ scedilla,      Scedilla,  quotedbl 	       	  	  ] };
     key <AB03> { [ tcedilla,      Tcedilla,  bracketleft 	       	  ] };
 };
-
 '''
 
 # methods --------------------------------------------------------
@@ -157,5 +157,5 @@ def match_replace(file_path, signal_str, append_to_str, replace_str):
 # match_replace(RULES_EVDEV_LST, 'Romanian (WinKeys)', 'Romanian (WinKeys)', LST_FRAGMENT)
 # match_replace(RULES_BASE_LST, 'Romanian (WinKeys)', 'Romanian (WinKeys)', LST_FRAGMENT)
 
-# TODO: use regex here?
-match_replace(SYMBOLS_RO, 'xkb_symbols "winkeys"', 'partial', SYMBOLS_RO_FRAGMENT)
+with open(SYMBOLS_RO, 'a') as f:
+    f.write(SYMBOLS_RO_FRAGMENT)

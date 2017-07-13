@@ -2,6 +2,7 @@ import fileinput
 import logging
 import logging.config
 from shutil import copy2
+import pathlib
 
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('installer')
@@ -110,15 +111,25 @@ xkb_symbols "popak_cedilla" {
 };
 '''
 
+
 # methods --------------------------------------------------------
 
+
 def backup(file):
-    file_backup = file + EXT_BACKUP
-    logging.debug('creating backup for ' + file + ' -> ' + file_backup)
+    backup_file = name_backup_file(file)
+    path = pathlib.Path(backup_file)
+    if path.is_file():  # if file already exists
+        None
+    logging.debug('creating backup for ' + file + ' -> ' + backup_file)
     # copy2(src,dst)
-    copy2(file, file_backup)
+    copy2(file, backup_file)
 
 
+def name_backup_file(file):
+    return file + EXT_BACKUP
+
+
+# noinspection PyShadowingNames
 def match_replace(file_path, signal_str, append_to_str, replace_str):
     match = False
     with fileinput.FileInput(file_path, inplace=True) as f:
@@ -140,6 +151,7 @@ def match_replace(file_path, signal_str, append_to_str, replace_str):
 # installation logic ---------------------------------------------
 
 # TODO: detect already installed popak and stop
+
 # TODO: backup incremental if .backup already exists -> .backup2
 
 # backup(RULES_BASE_XML)

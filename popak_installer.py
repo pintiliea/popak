@@ -1,16 +1,18 @@
+#!/usr/bin/python
+
 import fileinput
 import logging
 import logging.config
-from shutil import copy2
 import pathlib
+from shutil import copy2
 
 logging.config.fileConfig('logging.conf')
-logger = logging.getLogger('installer')
+logger = logging.getLogger('popak-installer')
 
 # constants ------------------------------------------------------
 
-DIR_RULES = 'original/usr/share/X11/xkb/rules/'
-DIR_SYMBOLS = 'original/usr/share/X11/xkb/symbols/'
+DIR_RULES = 'debian8/usr/share/X11/xkb/rules/'
+DIR_SYMBOLS = 'debian8/usr/share/X11/xkb/symbols/'
 
 RULES_BASE_XML = DIR_RULES + 'base.xml'
 RULES_BASE_LST = DIR_RULES + 'base.lst'

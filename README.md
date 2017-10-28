@@ -93,14 +93,14 @@ Add the two new variants _Popak (Standard)_ and _Popak (Cedilla)_ right beneath 
 </variantList> 
 ```
 
-Save (and exit if you wish).
+Save the changes.
 
 
 ## base.xml
 
-Open the file `/usr/share/X11/xkb/rules/base.xml` and repeat the modifications above.
+Do the same with `/usr/share/X11/xkb/rules/base.xml`.
 
-Save and exit.
+Remember to save.
 
 
 ## evdev.lst
@@ -123,14 +123,14 @@ popak_standard  ro: Popak Standard
 popak_cedilla   ro: Popak Cedilla
 ```
 
-Save and exit.
+Save the changes.
 
 
 ## base.lst
 
-Open the file `/usr/share/X11/xkb/rules/base.lst` and repeat the modifications above.
+Do the same with `/usr/share/X11/xkb/rules/base.lst`.
 
-Save and exit.
+Save the changes.
 
 
 ## ro
@@ -230,7 +230,7 @@ xkb_symbols "popak_cedilla" {
 };
 ```
 
-Save and exit.
+Save the changes.
 
 
 Reboot

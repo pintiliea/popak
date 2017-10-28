@@ -47,7 +47,8 @@ and backup this file:
 ```
 # cp ro ro.backup
 ```
-2) Installation 
+
+## 2) Installation 
 
 ### evdev.xml
 

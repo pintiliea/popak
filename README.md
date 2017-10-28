@@ -18,7 +18,7 @@ WORK IN PROGRESS! DON'T RUN THIS YET!
 
 I tested these manual steps for Debian 8 Jessie. The installer will do the same, automatically.
 
-## Backup before modifications
+## 1) Backup!
 
 Open a terminal as root and
 
@@ -47,8 +47,9 @@ and backup this file:
 ```
 # cp ro ro.backup
 ```
+2) Installation 
 
-## evdev.xml
+### evdev.xml
 
 Open the file `/usr/share/X11/xkb/rules/evdev.xml` for editing.
 
@@ -96,14 +97,14 @@ Add the two new variants _Popak (Standard)_ and _Popak (Cedilla)_ right beneath 
 Save the changes.
 
 
-## base.xml
+### base.xml
 
 Do the same with `/usr/share/X11/xkb/rules/base.xml`.
 
 Remember to save.
 
 
-## evdev.lst
+### evdev.lst
 
 Open the file `/usr/share/X11/xkb/rules/evdev.lst` for editing.
 
@@ -126,14 +127,14 @@ popak_cedilla   ro: Popak Cedilla
 Save the changes.
 
 
-## base.lst
+### base.lst
 
 Do the same with `/usr/share/X11/xkb/rules/base.lst`.
 
 Save the changes.
 
 
-## ro
+### ro
 
 Open the file `/usr/share/X11/xkb/symbols/ro` for editing.
 

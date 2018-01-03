@@ -2,21 +2,19 @@
  
 A scripted installer for the Romanian Popak keyboard layout http://www.invatasingur.ro/popak/index.php
 
-The author of this layout is Nicolae Popa. I just promised him I would write an installer script for Debian. I started work on this but for now I couldn't finish it because of three things: 1) I'm learning Python 2) I'm new to Debian 3) I'm always tired from work or other obligations and I shamefully can't motivate myself to keep up the work. Fourth would be that I'm afraid to unleash upon the world some script that might break people's operating systems.
+The author of this layout is Nicolae Popa. I just promised him I would write an installer script for Debian, which I wasn't able to do yet, sorry.
 
-I always use this layout when I write in Romanian because I can't write without diacritics anymore. In my opinion,  it's bad style and I usually have negative impressions about people who write in Romanian without diacritics. Every Romanian speaker should write with diacritics otherwise you do injustice to this language. I used the layout screenshots from Mr. Popa's website to learn the keyboard layout. My speed is not too fast but not too slow either, somewhere in between.
+I chose this layout because it's better than the Alt+Key layout.
 
-I enjoy very much that this is a fully thought keyboard layout, not just some improvisation like the Alt+Key layout, which just makes Romanian seem like a non-important, second level language. Romanian is an important language and it deserves its own full keyboard layout. I'm somehow saddened because so few people write with diacritics in Romanian on the internet and because it doesn't get the attention it deserves with public or governmental institutions.
-
-To switch keyboard layouts in Debian press Win-Key + Space. I think the Win-Key is the Command-Key.
+To switch keyboard layouts in Debian press Win-Key + Space. (I think the Win-Key is the same as the Command-Key)
 
 
 ![screenshot](ro-layout-gnome.png)
 
-WORK IN PROGRESS! DON'T RUN THIS YET!
--------------------------------------
+UNDER DEVELOPMENT
+------------------
 
-I tested these manual steps for Debian 8 Jessie. The installer will do the same, automatically.
+I tested these manual steps for Debian 8 Jessie. The installer must do the same, automatically.
 
 ## 1) Backup!
 

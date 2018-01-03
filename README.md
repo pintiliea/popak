@@ -56,7 +56,7 @@ Search for `Romanian (WinKeys)`
 
 You should find something like this:
 
-```
+```xml
 <variant>
   <configItem>
     <name>winkeys</name>
@@ -67,7 +67,7 @@ You should find something like this:
 
 Add the two new variants _Popak (Standard)_ and _Popak (Cedilla)_ right beneath the _Romanian (Winkeys)_ fragment, between the closing tag `</variant>` and `</variantList>`. Make sure that `</variantList>` is under the new Popak variants. It should look like this:
 
-```
+```xml
   <variant>
     <configItem>
       <name>winkeys</name>
@@ -82,6 +82,7 @@ Add the two new variants _Popak (Standard)_ and _Popak (Cedilla)_ right beneath 
       <description>Popak (Standard)</description>
     </configItem>
   </variant>
+  
   <variant>
     <configItem>
       <name>popak_cedilla</name>
